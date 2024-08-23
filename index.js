@@ -6,9 +6,10 @@ let express = require("express");
 
  const PORT = process.env.PORT || 10000;
 
-app.get("/", (req, res)=>{
-    res.send("<html><body><h1>Hola mundo</h1></body></html>");
-});
+
+app.use("/", express.static("./public"));
+
+
 
 app.get("/cool", (req, res)=>{
     res.send(cool());
